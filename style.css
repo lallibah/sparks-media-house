@@ -112,6 +112,36 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 0;
+}
+
+.menu-toggle span {
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-accent);
+    transition: var(--transition-smooth);
+    border-radius: 2px;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 .logo {
@@ -426,7 +456,117 @@ header.scrolled .mega-menu {
 }
 
 @media (max-width: 968px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: #000;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        width: 100%;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .nav-item {
+        font-size: 1.5rem;
+        padding: 1rem;
+        opacity: 1;
+    }
+
+    /* Mobile Mega Menu */
+    .has-mega-menu {
+        width: 100%;
+        text-align: center;
+    }
+
+    .mega-menu {
+        position: relative;
+        top: 0 !important;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        background: transparent;
+        backdrop-filter: none;
+        border: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        transition: height 0.4s ease;
+    }
+
+    .has-mega-menu.active .mega-menu {
+        height: auto;
+        padding-bottom: 2rem;
+    }
+
+    .mega-menu-content {
+        grid-template-columns: 1fr;
+        padding: 1rem 2rem;
+        gap: 2rem;
+    }
+
+    .mega-column h4 {
+        margin-bottom: 1rem;
+        font-size: 0.8rem;
+    }
+
+    .mega-column a {
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .featured-column {
+        display: none;
+        /* Hide featured card on mobile to save space */
+    }
+
+    /* General Typography & Spacing */
+    :root {
+        --section-padding: 5rem 1.5rem;
+    }
+
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
     .solutions-grid {
         grid-template-columns: 1fr;
+    }
+
+    #services h2 {
+        font-size: 2.5rem !important;
+        margin-bottom: 1rem;
+    }
+
+    #about {
+        grid-template-columns: 1fr !important;
+        gap: 2rem;
+    }
+
+    #contact h2 {
+        font-size: 2.2rem !important;
     }
 }

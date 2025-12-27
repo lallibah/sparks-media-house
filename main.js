@@ -5,7 +5,43 @@ document.addEventListener('DOMContentLoaded', () => {
     initPortfolio();
     initScrollAnimations();
     initHeaderScroll();
+    initMobileMenu();
 });
+
+function initMobileMenu() {
+    const toggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const megaMenuToggle = document.querySelector('.has-mega-menu');
+
+    if (toggle && navLinks) {
+        toggle.addEventListener('click', () => {
+            toggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (!link.classList.contains('nav-item') || !link.parentElement.classList.contains('has-mega-menu')) {
+                    toggle.classList.remove('active');
+                    navLinks.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+    }
+
+    if (megaMenuToggle) {
+        const megaLink = megaMenuToggle.querySelector('.nav-item');
+        megaLink.addEventListener('click', (e) => {
+            if (window.innerWidth <= 968) {
+                e.preventDefault();
+                megaMenuToggle.classList.toggle('active');
+            }
+        });
+    }
+}
 
 function initPortfolio() {
     const grid = document.getElementById('portfolioGrid');
