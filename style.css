@@ -796,6 +796,7 @@ header.scrolled .mega-menu {
     max-width: 1400px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 2.5rem;
     position: relative;
     z-index: 5002;
@@ -812,7 +813,7 @@ header.scrolled .mega-menu {
 }
 
 #modalMedia img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
     max-height: 80vh;
     object-fit: contain;
@@ -826,7 +827,7 @@ header.scrolled .mega-menu {
 }
 
 .modal-info {
-    text-align: left;
+    text-align: center;
     padding: 0 1rem;
 }
 
@@ -844,6 +845,7 @@ header.scrolled .mega-menu {
     line-height: 1.6;
     max-width: 900px;
     font-weight: 300;
+    margin: 0 auto;
 }
 
 .close-modal-wrapper {
