@@ -15,12 +15,40 @@
         <div class="container">
             <nav>
                 <a href="#" class="logo heading-font">SPARKS<span style="color: #fff;">MEDIA</span>HOUSE</a>
-                <div class="nav-links">
-                    <a href="#work">PORTFOLIO</a>
-                    <a href="#services">SERVICES</a>
-                    <a href="#about">ABOUT</a>
-                    <a href="#contact">CONTACT</a>
-                </div>
+                <ul class="nav-links">
+                    <li class="has-mega-menu">
+                        <a href="#services" class="nav-item">SOLUTIONS <span class="arrow">↓</span></a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-content">
+                                <div class="mega-column">
+                                    <h4>FOR BRANDS</h4>
+                                    <a href="#services">Commercial Video</a>
+                                    <a href="#services">Brand Storytelling</a>
+                                    <a href="#services">Product Photography</a>
+                                    <a href="#services">Social Content</a>
+                                </div>
+                                <div class="mega-column">
+                                    <h4>FOR MOMENTS</h4>
+                                    <a href="#services">Weddings & Elopements</a>
+                                    <a href="#services">Private Events</a>
+                                    <a href="#services">Portrait Sessions</a>
+                                    <a href="#services">Music Videos</a>
+                                </div>
+                                <div class="mega-column featured-column">
+                                    <div class="featured-card">
+                                        <span class="tag">NEW SERVICE</span>
+                                        <h3>AI COLOR GRADING</h3>
+                                        <p>Next-gen post-production for unmatched cinematic looks.</p>
+                                        <a href="#contact" class="text-link">LEARN MORE →</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="#work" class="nav-item">PORTFOLIO</a></li>
+                    <li><a href="#about" class="nav-item">ABOUT</a></li>
+                    <li><a href="#contact" class="nav-item">CONTACT</a></li>
+                </ul>
             </nav>
         </div>
     </header>
@@ -46,30 +74,61 @@
             </div>
         </section>
 
-        <!-- Services Section -->
-        <section id="services" class="section reveal" style="background-color: var(--color-surface);">
+        <!-- Solutions Section -->
+        <section id="services" class="section reveal" style="background-color: var(--color-surface); overflow: hidden;">
             <div class="container">
-                <div style="text-align: center; margin-bottom: 4rem;" class="reveal">
-                    <h2>OUR SERVICES</h2>
-                    <p style="color: var(--color-text-muted);">Crafting visual excellence across every lens.</p>
+                <div style="margin-bottom: 6rem;" class="reveal">
+                    <span class="tag" style="margin-bottom: 1rem;">OUR SOLUTIONS</span>
+                    <h2 style="font-size: 3.5rem; max-width: 800px;">TAILORED VISUAL STRATEGIES FOR <span style="color: var(--color-accent);">EVERY INDUSTRY.</span></h2>
                 </div>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
-                    <div class="service-card reveal">
-                        <h3 style="color: var(--color-accent);">01.</h3>
-                        <h4>CINEMATIC VIDEOGRAPHY</h4>
-                        <p>High-end commercial films, brand stories, and event highlights captured with a cinematic eye.
-                        </p>
+                
+                <div class="solutions-grid">
+                    <div class="solution-card reveal">
+                        <div class="solution-image">
+                            <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=600&q=80" alt="Commercial">
+                        </div>
+                        <div class="solution-info">
+                            <h4>FOR BRANDS</h4>
+                            <h3>COMMERCIAL & BRANDING</h3>
+                            <p>We craft high-conversion video content and product photography that defines your brand's visual identity.</p>
+                            <ul class="solution-list">
+                                <li>Brand Documentaries</li>
+                                <li>Product Showcases</li>
+                                <li>Social Media Campaigns</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="service-card reveal">
-                        <h3 style="color: var(--color-accent);">02.</h3>
-                        <h4>PROFESSIONAL PHOTOGRAPHY</h4>
-                        <p>From architectural shots to intimate portraits, we bring out the character in every frame.
-                        </p>
+
+                    <div class="solution-card reveal">
+                        <div class="solution-image">
+                            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=80" alt="Events">
+                        </div>
+                        <div class="solution-info">
+                            <h4>FOR EVENTS</h4>
+                            <h3>CINEMATIC STORYTELLING</h3>
+                            <p>Capturing the raw emotion and scale of your most significant milestones with a cinematic approach.</p>
+                            <ul class="solution-list">
+                                <li>Wedding Elopements</li>
+                                <li>Corporate Galas</li>
+                                <li>Live Music Events</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="service-card reveal">
-                        <h3 style="color: var(--color-accent);">03.</h3>
-                        <h4>POST-PRODUCTION</h4>
-                        <p>Color grading, professional editing, and sound design to elevate your final product.</p>
+
+                    <div class="solution-card reveal">
+                        <div class="solution-image">
+                            <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=600&q=80" alt="Production">
+                        </div>
+                        <div class="solution-info">
+                            <h4>FOR CREATIVES</h4>
+                            <h3>ADVANCED PRODUCTION</h3>
+                            <p>From AI-driven color grading to immersive sound design, we provide the technical edge your project needs.</p>
+                            <ul class="solution-list">
+                                <li>AI Color Grading</li>
+                                <li>Sound Engineering</li>
+                                <li>Technical Consulting</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -102,7 +161,17 @@
             <div class="container reveal" style="text-align: center;">
                 <h2 style="font-size: 3rem; margin-bottom: 2rem;">READY TO START YOUR<br><span
                         style="color: var(--color-accent);">NEXT PROJECT?</span></h2>
-                <a href="mailto:hello@sparksmediahouse.com" class="cta-button">LET'S CONNECT</a>
+
+                <div style="margin-bottom: 3rem;">
+                    <a href="mailto:sparksmediahouse@gmail.com" class="cta-button" style="margin-bottom: 1rem;">EMAIL
+                        US</a>
+                    <p style="margin-top: 2rem; font-size: 1.2rem; letter-spacing: 0.1em;">
+                        <a href="tel:+2330506041589" style="color: var(--color-accent);">+233 050 604 1589</a>
+                    </p>
+                    <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 0.5rem;">
+                        sparksmediahouse@gmail.com</p>
+                </div>
+
                 <div style="margin-top: 4rem; color: var(--color-text-muted); font-size: 0.8rem;">
                     <p>© 2024 SPARKS MEDIA HOUSE. ALL RIGHTS RESERVED.</p>
                 </div>
