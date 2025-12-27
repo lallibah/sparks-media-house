@@ -73,10 +73,37 @@
         </section>
 
         <!-- Portfolio Section -->
-        <section id="work" class="section reveal">
+        <section id="work" class="section reveal" style="padding-top: 8rem;">
             <div class="container">
-                <h2 style="margin-bottom: 3rem;" class="reveal">FEATURED WORK</h2>
+                <div style="margin-bottom: 6rem;" class="reveal">
+                    <span class="tag" style="margin-bottom: 1rem;">OUR WORK</span>
+                    <h2 style="font-size: 3.5rem; max-width: 800px;">CAPTURING STORIES THAT <span
+                            style="color: var(--color-accent);">LAST FOREVER.</span></h2>
+
+                    <!-- Portfolio Navigation -->
+                    <div class="portfolio-nav reveal"
+                        style="margin-top: 3rem; display: flex; gap: 2rem; flex-wrap: wrap;">
+                        <button class="filter-btn active" data-filter="all">ALL</button>
+                        <button class="filter-btn" data-filter="wedding">WEDDINGS</button>
+                        <button class="filter-btn" data-filter="engagement">ENGAGEMENTS</button>
+                        <button class="filter-btn" data-filter="commercial">COMMERCIAL</button>
+                    </div>
+                </div>
+
                 <div id="portfolioGrid">
+                    <!-- Dynamic Content -->
+                </div>
+            </div>
+
+            <!-- Portfolio Modal -->
+            <div id="portfolioModal" class="portfolio-modal">
+                <span class="close-modal">&times;</span>
+                <div class="modal-wrapper">
+                    <div id="modalMedia"></div>
+                    <div class="modal-info">
+                        <h3 id="modalTitle"></h3>
+                        <p id="modalDescription"></p>
+                    </div>
                 </div>
             </div>
         </section>

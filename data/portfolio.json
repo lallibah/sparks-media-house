@@ -1,44 +1,58 @@
 [
     {
         "id": "1",
-        "title": "Cinematic Storytelling",
-        "category": "Videography",
-        "thumbnail": "./assets/hero_bg.png",
-        "description": "Premium brand documentary for high-end lifestyle fashion."
+        "title": "A Legacy of Color",
+        "category": "WEDDINGS",
+        "tag": "wedding",
+        "type": "photo",
+        "thumbnail": "./assets/wedding.png",
+        "description": "Exquisite wedding photography at the historical castle grounds."
     },
     {
         "id": "2",
-        "title": "Dramatic Horizons",
-        "category": "Photography",
-        "thumbnail": "./assets/wedding.png",
-        "description": "Professional landscape photography captured during the golden hour."
+        "title": "Urban Love Story",
+        "category": "ENGAGEMENTS",
+        "tag": "engagement",
+        "type": "photo",
+        "thumbnail": "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=800&q=80",
+        "description": "Contemporary engagement session in the heart of the capital."
     },
     {
         "id": "3",
-        "title": "The Golden Hour",
-        "category": "Photography",
-        "thumbnail": "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80",
-        "description": "Wedding photography session in the cliffs."
+        "title": "Tech Summit Highlights",
+        "category": "COMMERCIAL",
+        "tag": "commercial",
+        "type": "video",
+        "thumbnail": "https://images.unsplash.com/photo-1540575861501-7ad05823123d?auto=format&fit=crop&w=800&q=80",
+        "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+        "description": "Energetic event coverage for West Africa's biggest tech launch."
     },
     {
         "id": "4",
-        "title": "Tech Launch 2024",
-        "category": "Videography",
-        "thumbnail": "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=800&q=80",
-        "description": "Event coverage and highlight reel for industry leaders."
+        "title": "The Spark Documentary",
+        "category": "COMMERCIAL",
+        "tag": "commercial",
+        "type": "video",
+        "thumbnail": "./assets/hero_bg.png",
+        "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+        "description": "Internal brand film showcasing the creative process behind Sparks Media House."
     },
     {
         "id": "5",
-        "title": "Nature Documentaries",
-        "category": "Videography",
-        "thumbnail": "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=800&q=80",
-        "description": "Short film series exploring untouched landscapes."
+        "title": "Tide & Time",
+        "category": "WEDDINGS",
+        "tag": "wedding",
+        "type": "photo",
+        "thumbnail": "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80",
+        "description": "Golden hour elopement on the shores of Prampram."
     },
     {
         "id": "6",
-        "title": "Architectural Essence",
-        "category": "Photography",
-        "thumbnail": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80",
-        "description": "Capturing the modern lines of city skyscrapers."
+        "title": "Minimalist Portraiture",
+        "category": "COMMERCIAL",
+        "tag": "commercial",
+        "type": "photo",
+        "thumbnail": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80",
+        "description": "High-end portrait session for a luxury fashion brand."
     }
 ]

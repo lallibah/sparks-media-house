@@ -126,25 +126,85 @@ function initMobileMenu() {
 
 function initPortfolio() {
     const grid = document.getElementById('portfolioGrid');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const modal = document.getElementById('portfolioModal');
+    const modalMedia = document.getElementById('modalMedia');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDescription');
+    const closeModal = document.querySelector('.close-modal');
+
     if (!grid) return;
 
-    portfolioData.forEach((item, index) => {
-        const card = document.createElement('div');
-        card.className = 'portfolio-card reveal';
-        card.style.transitionDelay = `${(index % 3) * 0.1}s`;
+    function renderPortfolio(filter = 'all') {
+        grid.innerHTML = '';
+        const filteredData = filter === 'all'
+            ? portfolioData
+            : portfolioData.filter(item => item.tag === filter);
 
-        card.innerHTML = `
-            <div class="portfolio-image-wrapper">
-                <img src="${item.thumbnail}" alt="${item.title}" loading="lazy">
-                <div class="portfolio-overlay">
-                    <span class="category">${item.category}</span>
-                    <h3>${item.title}</h3>
-                    <p>${item.description}</p>
+        filteredData.forEach((item, index) => {
+            const card = document.createElement('div');
+            card.className = 'portfolio-card reveal';
+            card.style.transitionDelay = `${(index % 3) * 0.1}s`;
+
+            card.innerHTML = `
+                <div class="portfolio-image-wrapper">
+                    <img src="${item.thumbnail}" alt="${item.title}" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <span class="category">${item.category}</span>
+                        <h3>${item.title}</h3>
+                        <p>${item.description}</p>
+                    </div>
                 </div>
-            </div>
-        `;
-        grid.appendChild(card);
+            `;
+
+            card.addEventListener('click', () => openModal(item));
+            grid.appendChild(card);
+
+            // Re-trigger reveal animation for new elements
+            setTimeout(() => card.classList.add('active'), 100);
+        });
+    }
+
+    function openModal(item) {
+        modalMedia.innerHTML = '';
+        modalTitle.innerText = item.title;
+        modalDesc.innerText = item.description;
+
+        if (item.type === 'video') {
+            modalMedia.innerHTML = `<iframe src="${item.videoUrl}" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
+        } else {
+            modalMedia.innerHTML = `<img src="${item.thumbnail}" alt="${item.title}">`;
+        }
+
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closePortfolioModal() {
+        modal.classList.remove('active');
+        modalMedia.innerHTML = ''; // Stop video playback
+        document.body.style.overflow = '';
+    }
+
+    // Filter Logic
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderPortfolio(btn.dataset.filter);
+        });
     });
+
+    // Modal Close Logic
+    if (closeModal) closeModal.addEventListener('click', closePortfolioModal);
+    if (modal) {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closePortfolioModal();
+        });
+    }
+
+    // Initial Render
+    renderPortfolio();
 }
 
 function initScrollAnimations() {
