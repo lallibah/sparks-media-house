@@ -800,7 +800,8 @@ header.scrolled .mega-menu {
     gap: 2.5rem;
     position: relative;
     z-index: 5002;
-    margin: auto;
+    padding: 4rem 0;
+    /* Add space for scrolling on small heights */
 }
 
 #modalMedia {
