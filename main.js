@@ -150,6 +150,7 @@ function initPortfolio() {
                 <div class="portfolio-image-wrapper">
                     <img src="${item.thumbnail}" alt="${item.title}" loading="lazy">
                     <div class="portfolio-overlay">
+                        ${item.type === 'video' ? '<div class="video-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></div>' : ''}
                         <span class="category">${item.category}</span>
                         <h3>${item.title}</h3>
                         <p>${item.description}</p>
@@ -323,6 +324,34 @@ style.textContent = `
         font-size: 0.85rem;
         color: #ccc;
         line-height: 1.4;
+    }
+
+    .video-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60px;
+        height: 60px;
+        background: rgba(255, 179, 0, 0.9);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #000;
+        margin-bottom: 2rem;
+        transition: var(--transition-smooth);
+    }
+
+    .video-icon svg {
+        width: 30px;
+        height: 30px;
+        margin-left: 4px;
+    }
+
+    .portfolio-card:hover .video-icon {
+        background: #fff;
+        transform: translate(-50%, -55%) scale(1.1);
     }
 `;
 document.head.appendChild(style);
