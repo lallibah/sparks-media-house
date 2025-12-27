@@ -665,10 +665,6 @@ header.scrolled .mega-menu {
 }
 
 #calendar-container {
-    min-height: 320px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--glass-border);
-    border-radius: 4px;
     margin-top: 1rem;
 }
 
