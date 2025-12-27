@@ -7,7 +7,25 @@ document.addEventListener('DOMContentLoaded', () => {
     initHeaderScroll();
     initMobileMenu();
     initContactForm();
+    initCalendar();
 });
+
+function initCalendar() {
+    const container = document.getElementById('calendar-container');
+    const dateInput = document.getElementById('date');
+
+    if (!container) return;
+
+    flatpickr(container, {
+        inline: true,
+        altInput: false,
+        dateFormat: "Y-m-d",
+        minDate: "today",
+        onChange: function (selectedDates, dateStr, instance) {
+            dateInput.value = dateStr;
+        }
+    });
+}
 
 function initContactForm() {
     const form = document.getElementById('contact-form');

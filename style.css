@@ -663,3 +663,61 @@ header.scrolled .mega-menu {
     opacity: 0.5;
     cursor: not-allowed;
 }
+
+/* Flatpickr Customization */
+.flatpickr-calendar {
+    background: #0a0a0a !important;
+    box-shadow: none !important;
+    border: 1px solid var(--glass-border) !important;
+    width: 100% !important;
+    margin-top: 1rem;
+}
+
+.flatpickr-months .flatpickr-month {
+    background: transparent !important;
+    color: #fff !important;
+}
+
+.flatpickr-innerContainer {
+    padding: 1rem 0;
+}
+
+.flatpickr-day {
+    color: #fff !important;
+    border-radius: 0 !important;
+    transition: var(--transition-smooth) !important;
+}
+
+.flatpickr-day:hover {
+    background: rgba(255, 179, 0, 0.1) !important;
+    color: var(--color-accent) !important;
+}
+
+.flatpickr-day.selected {
+    background: var(--color-accent) !important;
+    color: #000 !important;
+    border-color: var(--color-accent) !important;
+}
+
+.flatpickr-day.today {
+    border-color: var(--color-accent) !important;
+}
+
+.flatpickr-weekday {
+    color: var(--color-accent) !important;
+    font-weight: 700 !important;
+    font-size: 0.7rem !important;
+}
+
+.flatpickr-current-month .flatpickr-monthDropdown-months {
+    font-family: 'Outfit', sans-serif !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+}
+
+/* Ensure the calendar doesn't overflow mobile */
+@media (max-width: 480px) {
+    .flatpickr-calendar {
+        font-size: 0.8rem !important;
+    }
+}

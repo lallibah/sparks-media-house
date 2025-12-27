@@ -8,6 +8,8 @@
     <meta name="description"
         content="Sparks Media House - Capturing cinematic moments through professional photography and videography. Based in your city, serving nationwide.">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css">
 </head>
 
 <body>
@@ -198,9 +200,10 @@
                                     <option value="other">Other</option>
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <label for="date">ESTIMATED DATE</label>
-                                <input type="date" id="date" name="date" required>
+                            <div class="form-group" style="grid-column: span 2;">
+                                <label for="date">ESTIMATED PROJECT DATE</label>
+                                <div id="calendar-container"></div>
+                                <input type="hidden" id="date" name="date" required>
                             </div>
                         </div>
 
