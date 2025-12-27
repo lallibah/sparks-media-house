@@ -2,7 +2,8 @@ backend:
   name: github
   repo: lallibah/sparks-media-house
   branch: main
-  base_url: https://sparksmediahouse.com # Needed if using a custom auth server or Cloudflare
+  base_url: https://sparksmediahouse.com
+  auth_endpoint: auth
 
 media_folder: assets
 public_folder: ./assets
