@@ -137,9 +137,10 @@ function initPortfolio() {
 
     function renderPortfolio(filter = 'all') {
         grid.innerHTML = '';
+        const data = portfolioData.items || [];
         let filteredData = filter === 'all'
-            ? portfolioData
-            : portfolioData.filter(item => item.tag === filter);
+            ? data
+            : data.filter(item => item.tag === filter);
 
         // Limit 'ALL' view to 9 items (3x3 grid)
         if (filter === 'all' && filteredData.length > 9) {

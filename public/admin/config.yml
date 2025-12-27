@@ -1,0 +1,29 @@
+backend:
+  name: github
+  repo: lallibah/sparks-media-house
+  branch: main
+  base_url: https://sparksmediahouse.com # Needed if using a custom auth server or Cloudflare
+
+media_folder: assets
+public_folder: ./assets
+
+collections:
+  - name: "portfolio"
+    label: "Portfolio"
+    files:
+      - file: "data/portfolio.json"
+        label: "Portfolio Data"
+        name: "portfolio_data"
+        fields:
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - {label: "ID", name: "id", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Category", name: "category", widget: "select", options: ["WEDDINGS", "ENGAGEMENTS", "COMMERCIAL"]}
+              - {label: "Tag", name: "tag", widget: "select", options: ["wedding", "engagement", "commercial"]}
+              - {label: "Type", name: "type", widget: "select", options: ["photo", "video"]}
+              - {label: "Thumbnail", name: "thumbnail", widget: "image"}
+              - {label: "Video URL", name: "videoUrl", widget: "string", required: false}
+              - {label: "Description", name: "description", widget: "text"}
