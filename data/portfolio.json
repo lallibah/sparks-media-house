@@ -89,7 +89,7 @@
       "category": "ENGAGEMENTS",
       "tag": "engagement",
       "type": "photo",
-      "thumbnail": "assets/editorial_4.jpg",
+      "thumbnail": "./assets/editorial_4.jpg",
       "title": "An engagement ",
       "description": "Capturing the moment"
     }
