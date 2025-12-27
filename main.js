@@ -4,6 +4,7 @@ import portfolioData from './data/portfolio.json' assert { type: 'json' };
 document.addEventListener('DOMContentLoaded', () => {
     initPortfolio();
     initScrollAnimations();
+    initHeaderScroll();
 });
 
 function initPortfolio() {
@@ -12,8 +13,8 @@ function initPortfolio() {
 
     portfolioData.forEach((item, index) => {
         const card = document.createElement('div');
-        card.className = 'portfolio-card fade-in';
-        card.style.animationDelay = `${index * 0.1}s`;
+        card.className = 'portfolio-card reveal';
+        card.style.transitionDelay = `${(index % 3) * 0.1}s`;
 
         card.innerHTML = `
             <div class="portfolio-image-wrapper">
@@ -33,31 +34,57 @@ function initScrollAnimations() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+                entry.target.classList.add('active');
             }
         });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.15 });
 
-    document.querySelectorAll('.section').forEach(section => {
-        observer.observe(section);
+    // Observe sections and any element with 'reveal' class
+    document.querySelectorAll('.section, .reveal, .portfolio-card').forEach(el => {
+        observer.observe(el);
     });
 }
 
-// Add these styles dynamically for the cards
+function initHeaderScroll() {
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+}
+
+// Inline Styles for Portfolio Cards (Premium Look)
 const style = document.createElement('style');
 style.textContent = `
+    #portfolioGrid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 2rem;
+    }
+
     .portfolio-card {
         position: relative;
         overflow: hidden;
         aspect-ratio: 16/10;
         cursor: pointer;
         background: #111;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .portfolio-card.active {
+        opacity: 1;
+        transform: translateY(0);
     }
 
     .portfolio-image-wrapper {
         width: 100%;
         height: 100%;
-        transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .portfolio-card img {
@@ -65,7 +92,7 @@ style.textContent = `
         height: 100%;
         object-fit: cover;
         filter: grayscale(0.5);
-        transition: all 0.5s ease;
+        transition: all 0.8s ease;
     }
 
     .portfolio-overlay {
@@ -73,15 +100,19 @@ style.textContent = `
         bottom: 0;
         left: 0;
         width: 100%;
-        padding: 2rem;
-        background: linear-gradient(transparent, rgba(0,0,0,0.9));
+        padding: 2.5rem;
+        background: linear-gradient(transparent, rgba(0,0,0,0.95));
         transform: translateY(20px);
         opacity: 0;
-        transition: all 0.4s ease;
+        transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 100%;
     }
 
     .portfolio-card:hover .portfolio-image-wrapper {
-        transform: scale(1.05);
+        transform: scale(1.08);
     }
 
     .portfolio-card:hover img {
@@ -95,15 +126,26 @@ style.textContent = `
 
     .portfolio-overlay h3 {
         color: var(--color-accent);
+        font-size: 1.4rem;
         margin-bottom: 0.5rem;
+        font-family: 'Outfit', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
     }
 
     .portfolio-overlay .category {
         font-size: 0.7rem;
         text-transform: uppercase;
-        letter-spacing: 0.2em;
+        letter-spacing: 0.25em;
         color: #fff;
         opacity: 0.6;
+        margin-bottom: 0.5rem;
+    }
+
+    .portfolio-overlay p {
+        font-size: 0.85rem;
+        color: #ccc;
+        line-height: 1.4;
     }
 `;
 document.head.appendChild(style);
