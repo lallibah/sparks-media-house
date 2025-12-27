@@ -54,5 +54,33 @@
         "type": "photo",
         "thumbnail": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80",
         "description": "High-end portrait session for a luxury fashion brand."
+    },
+    {
+        "id": "7",
+        "title": "Kente & Kin",
+        "category": "WEDDINGS",
+        "tag": "wedding",
+        "type": "photo",
+        "thumbnail": "https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=800&q=80",
+        "description": "Celebrating tradition and royalty in a vibrant Ghanaian ceremony."
+    },
+    {
+        "id": "8",
+        "title": "Innovate West Africa",
+        "category": "COMMERCIAL",
+        "tag": "commercial",
+        "type": "photo",
+        "thumbnail": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80",
+        "description": "Professional corporate documentary for a leading fintech firm."
+    },
+    {
+        "id": "9",
+        "title": "The Golden Silence",
+        "category": "COMMERCIAL",
+        "tag": "commercial",
+        "type": "video",
+        "thumbnail": "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80",
+        "videoUrl": "https://www.youtube.com/embed/EngW7tLk6R8",
+        "description": "A high-quality cinematic short exploring the beauty of West African landscapes."
     }
 ]
