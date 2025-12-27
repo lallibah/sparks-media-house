@@ -3,14 +3,14 @@
         "id": "1",
         "title": "Cinematic Storytelling",
         "category": "Videography",
-        "thumbnail": "./public/assets/hero_bg.png",
+        "thumbnail": "./assets/hero_bg.png",
         "description": "Premium brand documentary for high-end lifestyle fashion."
     },
     {
         "id": "2",
         "title": "Dramatic Horizons",
         "category": "Photography",
-        "thumbnail": "./public/assets/wedding.png",
+        "thumbnail": "./assets/wedding.png",
         "description": "Professional landscape photography captured during the golden hour."
     },
     {
