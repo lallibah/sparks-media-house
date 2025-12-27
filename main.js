@@ -11,21 +11,37 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initCalendar() {
-    const checkFlatpickr = setInterval(() => {
-        if (typeof flatpickr !== 'undefined') {
-            clearInterval(checkFlatpickr);
-            flatpickr('#calendar-container', {
-                inline: true,
-                dateFormat: "Y-m-d",
-                minDate: "today",
-                theme: "dark",
-                onChange: function (selectedDates, dateStr, instance) {
-                    const dateInput = document.getElementById('date');
-                    if (dateInput) dateInput.value = dateStr;
-                }
-            });
-        }
-    }, 100);
+    const container = document.getElementById('calendar-container');
+    if (!container) return;
+
+    if (typeof flatpickr !== 'undefined') {
+        flatpickr(container, {
+            inline: true,
+            dateFormat: "Y-m-d",
+            minDate: "today",
+            theme: "dark",
+            onChange: function (selectedDates, dateStr, instance) {
+                const dateInput = document.getElementById('date');
+                if (dateInput) dateInput.value = dateStr;
+            }
+        });
+    } else {
+        // Fallback for slower connections
+        window.addEventListener('load', () => {
+            if (typeof flatpickr !== 'undefined') {
+                flatpickr(container, {
+                    inline: true,
+                    dateFormat: "Y-m-d",
+                    minDate: "today",
+                    theme: "dark",
+                    onChange: function (selectedDates, dateStr, instance) {
+                        const dateInput = document.getElementById('date');
+                        if (dateInput) dateInput.value = dateStr;
+                    }
+                });
+            }
+        });
+    }
 }
 
 function initContactForm() {
