@@ -6,7 +6,53 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     initHeaderScroll();
     initMobileMenu();
+    initContactForm();
 });
+
+function initContactForm() {
+    const form = document.getElementById('contact-form');
+    const status = document.getElementById('form-status');
+    const btn = document.getElementById('submit-btn');
+
+    if (!form) return;
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // Visual feedback
+        btn.disabled = true;
+        btn.innerText = 'SENDING...';
+        status.className = 'form-status';
+        status.innerText = '';
+
+        const formData = new FormData(form);
+
+        try {
+            // Using Formspree (User needs to replace with actual endpoint)
+            const response = await fetch('https://formspree.io/f/mqakvjnd', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                status.innerText = 'Thank you! Your inquiry has been sent. We will reach out shortly.';
+                status.classList.add('success');
+                form.reset();
+            } else {
+                throw new Error('Server error');
+            }
+        } catch (err) {
+            status.innerText = 'Oops! Something went wrong. Please try again or email us directly.';
+            status.classList.add('error');
+        } finally {
+            btn.disabled = false;
+            btn.innerText = 'SEND INQUIRY';
+        }
+    });
+}
 
 function initMobileMenu() {
     const toggle = document.querySelector('.menu-toggle');
