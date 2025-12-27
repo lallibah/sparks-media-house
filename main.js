@@ -179,13 +179,32 @@ function initPortfolio() {
 
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
+        document.body.style.height = '100vh'; // Stronger lock
+
+        // History API support
+        history.pushState({ modalOpen: true }, '', '');
     }
 
-    function closePortfolioModal() {
+    function closePortfolioModal(isBackAction = false) {
         modal.classList.remove('active');
         modalMedia.innerHTML = ''; // Stop video playback
         document.body.style.overflow = '';
+        document.body.style.height = '';
+
+        if (!isBackAction) {
+            // Only go back if not already triggered by popstate
+            if (history.state && history.state.modalOpen) {
+                history.back();
+            }
+        }
     }
+
+    // Listen for browser back button
+    window.addEventListener('popstate', (event) => {
+        if (modal.classList.contains('active')) {
+            closePortfolioModal(true);
+        }
+    });
 
     // Filter Logic
     filterBtns.forEach(btn => {
